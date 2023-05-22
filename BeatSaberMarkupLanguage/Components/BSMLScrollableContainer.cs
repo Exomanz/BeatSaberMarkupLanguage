@@ -135,7 +135,7 @@ namespace BeatSaberMarkupLanguage.Components
                 PageDownButton.interactable = _destinationPos < contentHeight - (_viewport?.rect.height ?? 0);
         }
 
-        public new void ComputeScrollFocusPosY()
+        public void ComputeScrollFocusPosY()
         {
             ItemForFocussedScrolling[] componentsInChildren = GetComponentsInChildren<ItemForFocussedScrolling>(true);
             _scrollFocusPositions = (from item in componentsInChildren
@@ -152,7 +152,7 @@ namespace BeatSaberMarkupLanguage.Components
             }
         }
 
-        public new void ScrollDown(bool animated)
+        public void ScrollDown(bool animated)
         {
             float dstPosY = contentHeight - _viewport.rect.height;
             ScrollTo(dstPosY, animated);
@@ -243,7 +243,7 @@ namespace BeatSaberMarkupLanguage.Components
             enabled = true;
         }
 
-        public new void SetDestinationPosY(float value)
+        public void SetDestinationPosY(float value)
         {
             float maxPosition = contentHeight - _viewport.rect.height;
             if (maxPosition < 0 && !AlignBottom) maxPosition = 0f;

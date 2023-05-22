@@ -97,7 +97,7 @@ namespace BeatSaberMarkupLanguage.ViewControllers
 
         string WatcherGroup.IHotReloadableController.Name => name;
 
-        protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
+        public override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
         {
             if (ContentChanged && !firstActivation)
             {
@@ -118,7 +118,7 @@ namespace BeatSaberMarkupLanguage.ViewControllers
         }
 
 
-        protected override void DidDeactivate(bool removedFromHierarchy, bool screenSystemDisabling)
+        public override void DidDeactivate(bool removedFromHierarchy, bool screenSystemDisabling)
         {
             _content = null;
 #if HRVC_DEBUG

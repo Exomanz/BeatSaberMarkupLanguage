@@ -11,7 +11,7 @@ namespace BeatSaberMarkupLanguage.ViewControllers
 
         public Action<bool, bool, bool> didActivate;
 
-        protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
+        public override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
         {
             if (firstActivation)
                 BSMLParser.instance.Parse(Content, gameObject, this);
